@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../context/App";
 import InputComponent from "../components/InputComponent";
 import Container from "../components/Container";
 import ButtonTip from "../components/ButtonTip";
 import CardDetails from "../components/CardDetails";
+import useTextInput from "../hooks/useTextInput";
 function Home() {
+  const { state, setActiveTip, setBill, setNumberOfPeople, setCustomTip } =
+    useContext(AppContext);
+
+  console.log(state);
   return (
     <div className="container">
       <div className="container-title">
@@ -12,24 +18,46 @@ function Home() {
       </div>
       <div className="container-form">
         <Container title="Bill">
-          <InputComponent type="dollar" />
+          <InputComponent type="dollar" action={setBill} value={state.bill} />
         </Container>
         <Container title="Select Tip %">
           <div className="container-tip">
-            <ButtonTip tip={5} />
-            <ButtonTip tip={10} />
-            <ButtonTip tip={15} />
-
-            <ButtonTip tip={25} isActive={true} />
-            <ButtonTip tip={10} />
-            <InputComponent label="Custom" />
+            {state.tips.map((tip) => {
+              if (tip.label === "Custom") {
+                return (
+                  <InputComponent
+                    label={tip.label}
+                    action={setCustomTip}
+                    value={tip.value}
+                    clicl={() => {
+                      setActiveTip(tip);
+                    }}
+                  />
+                );
+              } else {
+                return (
+                  <ButtonTip
+                    item={tip}
+                    tip={tip.value}
+                    label={tip.label}
+                    isActive={tip.isActive}
+                    action={setActiveTip}
+                  />
+                );
+              }
+            })}
           </div>
         </Container>
 
         <Container title="Number of People">
-          <InputComponent type="person" />
+          <InputComponent
+            type="person"
+            action={setNumberOfPeople}
+            value={state.numberOfPeople}
+            alert={state.numberOfPeople === 0 ? state.bill >= 1 && true : false}
+          />
         </Container>
-        <CardDetails/>
+        <CardDetails {...state} />
       </div>
     </div>
   );
