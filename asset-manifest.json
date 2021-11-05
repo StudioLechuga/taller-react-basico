@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.90606fb0.chunk.css",
+    "main.js": "/static/js/main.2c903033.chunk.js",
+    "main.js.map": "/static/js/main.2c903033.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.6cb6b3b9.js",
+    "runtime-main.js.map": "/static/js/runtime-main.6cb6b3b9.js.map",
+    "static/js/2.d167369d.chunk.js": "/static/js/2.d167369d.chunk.js",
+    "static/js/2.d167369d.chunk.js.map": "/static/js/2.d167369d.chunk.js.map",
+    "static/js/3.adbab80d.chunk.js": "/static/js/3.adbab80d.chunk.js",
+    "static/js/3.adbab80d.chunk.js.map": "/static/js/3.adbab80d.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.90606fb0.chunk.css.map": "/static/css/main.90606fb0.chunk.css.map",
+    "static/js/2.d167369d.chunk.js.LICENSE.txt": "/static/js/2.d167369d.chunk.js.LICENSE.txt",
+    "static/media/icon-dollar.9f9be353.svg": "/static/media/icon-dollar.9f9be353.svg",
+    "static/media/icon-person.65bfd204.svg": "/static/media/icon-person.65bfd204.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6cb6b3b9.js",
+    "static/js/2.d167369d.chunk.js",
+    "static/css/main.90606fb0.chunk.css",
+    "static/js/main.2c903033.chunk.js"
+  ]
+}
